@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShadowSide Route Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShadowSide Route Map</h1>
+    <p>A lightweight web app to visualize routes and shadow directions using OpenStreetMap + OSRM + SunCalc.</p>
+  </header>
+
+  <section class="controls">
+    <input id="start" placeholder="Start (address or lat,lon)" value="12.9176,77.5729" />
+    <input id="end" placeholder="End (address or lat,lon)" value="12.9325,77.6928" />
+    <input id="travel-time" type="datetime-local" />
+    <button id="btn-route">Get Route</button>
+
+    <!-- About link (inline, keyboard-focusable) -->
+    <span id="about-link" aria-haspopup="dialog" role="button" tabindex="0">
+      About Application
+    </span>
+  </section>
+
+  <div id="map"></div>
+
+  <section class="info">
+    <div id="sun-times"></div>
+    <pre id="shadow-summary"></pre>
+    <small>Tip: use valid place names or GPS coords. This project uses public services (Nominatim & OSRM) which have usage limits.</small>
+  </section>
+
+  <footer>
+    <p>Made with OpenStreetMap, OSRM, SunCalc, and Leaflet.</p>
+  </footer>
+
+  <!-- About Application Modal (placed inside body, before scripts) -->
+  <div id="about-modal" class="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-hidden="true">
+    <div class="about-content" role="document">
+      <button id="close-about" class="close-btn" aria-label="Close about dialog">&times;</button>
+
+      <h2 id="about-title">ShadowSide Route Map</h2>
+
+      <p>
+        <b>ShadowSide Route Map</b> is a lightweight mapping system that visualizes how sunlight
+        falls on different sides of your vehicle during a specific travel route and time.
+        The system calculates LEFT / RIGHT / FRONT / BACK sun exposure using solar
+        azimuth data and route geometry.
+      </p>
+
+      <h3>Technologies Used</h3>
+      <ul>
+        <li>Leaflet.js – Map rendering</li>
+        <li>OpenStreetMap – Base map tiles</li>
+        <li>OSRM Routing – Live route generation</li>
+        <li>Nominatim – Geocoding</li>
+        <li>SunCalc.js – Solar angle & sun direction calculations</li>
+        <li>HTML + CSS + JavaScript</li>
+      </ul>
+
+      <h3>Future Improvements</h3>
+      <ul>
+        <li>AI-based route suggestions for minimum sunlight exposure</li>
+        <li>Accuracy boost using terrain & building shadow data</li>
+        <li>Save/export route details as image or PDF</li>
+        <li>Android Mobile App version</li>
+      </ul>
+
+      <h3>Developer</h3>
+      <p><b>Shreesha R</b></p>
+      <p>
+        A Computer Science enthusiast focused on building intuitive projects.
+      </p>
+
+      <p>
+  <a href="https://www.linkedin.com/in/shreesha-r-a171s/"
+     target="_blank"
+     style="color:#1a73e8; text-decoration:underline; font-weight:500;">
+     LinkedIn Profile
+  </a>
+</p>
+
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/suncalc/suncalc.js"></script>
+  <script src="main.js"></script>
+  <script src="about-modal.js"></script> <!-- small file (see below) -->
+</body>
+</html>
