@@ -72,9 +72,13 @@ Solar Breakdown & Shadow Exposure:
 
 ## ShadowSide/
    ├── index.html       # Application layout, control panels, and accessibility modal
+   
    ├── style.css        # Responsive layout styling, control containers, and map overlays
+   
    ├── main.js          # Geocoding, OSRM fetching, SunCalc math, compass rendering & live GPS
+   
    ├── about-modal.js   # Modal dialog interaction logic
+   
    └── README.md        # Technical project documentation
 
 ## How to Run Locally
