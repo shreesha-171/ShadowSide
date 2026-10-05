@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShadowSide Route Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShadowSide Route Map</h1>
+    <p>Visualize route directions, real-time compass headings, and total solar exposure duration.</p>
+  </header>
+
+  <section class="controls">
+    <input id="start" placeholder="Start (address or lat,lon)" />
+    <input id="end" placeholder="End (address or lat,lon)" />
+    <input id="travel-time" type="datetime-local" />
+    <button id="btn-route">Get Route</button>
+    <button id="btn-live" class="btn-secondary">Enable Live GPS & Compass</button>
+
+    <!-- About link -->
+    <span id="about-link" aria-haspopup="dialog" role="button" tabindex="0">
+      About Application
+    </span>
+  </section>
+
+  <div id="map"></div>
+
+  <section class="info">
+    <div id="live-clock" style="font-size: 14px; font-weight: bold; color: #1e40af; margin-bottom: 6px;">
+    Current Time: --:--:--
+    </div>
+    <div id="sun-times"></div>
+    <div id="shadow-summary" class="summary-box">
+      Enter start and end points to generate solar exposure analysis.
+    </div>
+    <small>Tip: Uses public OSRM and Nominatim services. Ensure location permissions are allowed for Live Mode.</small>
+  </section>
+
+  <footer>
+    <p>Made with OpenStreetMap, OSRM, SunCalc, and Leaflet.</p>
+  </footer>
+
+  <!-- About Application Modal -->
+  <div id="about-modal" class="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-hidden="true">
+    <div class="about-content" role="document">
+      <button id="close-about" class="close-btn" aria-label="Close about dialog">&times;</button>
+
+      <h2 id="about-title">Shadow Side</h2>
+
+      <p>
+        <b>Shadow Side</b> is an interactive routing and solar-tracking system designed to calculate real-time sunlight exposure and shadow distribution during road travel. By combining route geometry with solar position data, the app precisely estimates travel durations spent under <b>left</b>, <b>right</b>, and <b>overhead</b> sunlight, helping travelers plan more comfortable and efficient journeys.
+      </p>
+
+      <h3>Key Features</h3>
+      <ul>
+        <li><b>Solar Exposure Breakdown:</b> Time-weighted analysis (hours/minutes) showing the percentage of sunlight vs shadow exposure on both sides.</li>
+        <li><b>Interactive 8-Point Compass:</b> Real-time map-based compass (N, NE, E, SE, S, SW, W, NW) with a dynamic solar position indicator ☀.</li>
+        <li><b>Live Hardware Tracking:</b> GPS integration with device orientation sensors (DeviceOrientation API) for real-time compass rotation.</li>
+        <li><b>Alternative Route Selection:</b>  Multi-route engine enabling users to toggle between fastest highways and shorter alternatives.</li>
+        <li><b>Arrival & Night Detection:</b> Predicts arrival times and automatically detects nighttime journeys (before sunrise or after sunset).</li>
+        <li><b>On-Map Visual Legend:</b> Color-coded overlays showing solar positions along the route in real time.</li>
+      </ul>
+
+      <h3>Technologies Used</h3>
+      <ul>
+        <li><b>Leaflet.js -></b> Map rendering & custom UI controls</li>
+        <li><b>OpenStreetMap (France & Esri) -></b> Base map tile services</li>
+        <li><b>OSRM Routing API -></b> Live multi-route generation</li>
+        <li><b>Nominatim API -></b> Geocoding & coordinate search</li>
+        <li><b>SunCalc.js -></b> Astronomical solar position & time calculations</li>
+        <li><b>DeviceOrientation & Geolocation APIs -></b> Real-time motion and compass tracking</li>
+      </ul>
+
+      <h3>Developer</h3>
+      <p><b>Shreesha R</b></p>
+      <p>
+        Computer Science enthusiast passionate about building practical web applications and automation solutions.
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/shreesha-r-a171s/"
+           target="_blank"
+           class="about-link-inline">
+           LinkedIn Profile
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/suncalc.min.js"></script>
+  <script src="main.js"></script>
+  <script src="about-modal.js"></script>
+</body>
+</html>
