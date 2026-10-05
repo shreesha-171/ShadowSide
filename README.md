@@ -70,7 +70,7 @@ Solar Breakdown & Shadow Exposure:
 - Left Side Sunlight (Right Side in Shadow): `5.5 hrs (57.9%)`
 - Top / Overhead Sunlight (Both Sides Shaded): `1.0 hrs (10.5%)`
 
-ShadowSide/
+## ShadowSide/
    ├── index.html       # Application layout, control panels, and accessibility modal
    ├── style.css        # Responsive layout styling, control containers, and map overlays
    ├── main.js          # Geocoding, OSRM fetching, SunCalc math, compass rendering & live GPS
