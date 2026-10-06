@@ -2,6 +2,12 @@
 
 An interactive, web-based routing and astronomical solar tracking system that visualizes driving paths, tracks real-time sun movement, and calculates sunlight vs. shadow exposure along road journeys.
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Application-2ea44f?style=for-the-badge&logo=github)](https://shreesha-171.github.io/ShadowSide/)
+
+> **🚀 Live Application:** [shreesha-171.github.io/ShadowSide](https://shreesha-171.github.io/ShadowSide/)
+
+An interactive, web-based routing and astronomical solar tracking system that visualizes driving paths, tracks real-time sun movement, and calculates sunlight vs. shadow exposure along road journeys.
+
 ## Introduction
 
 Shadow Side is a client-side geospatial application designed to analyze solar orientation relative to a moving vehicle. By bridging route geometry with real-time astronomical solar position formulas, the platform calculates exact solar position angles and relative vehicle headings to determine where sunlight hits and where shadows fall throughout a trip.
